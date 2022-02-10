@@ -1,6 +1,6 @@
 import diceRoll from './Dice';
 
-export default function effectivenessCheck(attacker, defender) {
+export default function precisionCheck(attacker, defender) {
   let attackRoll = diceRoll();
   if (attackRoll === 1) {
     return -100;

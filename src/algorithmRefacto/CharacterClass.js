@@ -20,24 +20,19 @@ export default class Fighter {
     return this.life > 0;
   }
 
-  hit(effectiveness) {
-    let power = (this.power + this.strength) * effectiveness;
-    // console.log('Power :');
-    // console.log(power);
-    return power;
+  restoreSpeed() {
+    this.speed = this.initialSpeed;
+  }
+  slowDown() {
+    this.speed /= 2;
   }
 
   stumbles() {
     this.speed = 0;
-    this.durability -= 5;
+    this.life -= 5;
   }
-
-  restoreSpeed() {
-    this.speed = this.initialSpeed;
-  }
-
-  slowDown() {
-    this.speed /= 2;
+  hit(effectiveness) {
+    return (this.power + this.strength) * effectiveness;
   }
 
   updateGear(objects) {
@@ -63,6 +58,7 @@ export default class Fighter {
     this.speed = Math.round((this.speed / 100) * (100 + gear.speed));
     this.initialSpeed = this.speed;
     this.life = Math.round((this.life / 100) * (100 + gear.durability));
+    this.initialLife = this.life;
     this.power = Math.round((this.power / 100) * (100 + gear.power));
     this.combat = Math.round((this.combat / 100) * (100 + gear.combat));
   }
