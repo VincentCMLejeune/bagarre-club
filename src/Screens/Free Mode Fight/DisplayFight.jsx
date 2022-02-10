@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { handicaps, weapons, fields } from '../../algorithms/bonusmalus/BonusMalus';
-import CombatAlgorithm from '../../algorithms/CombatAlgorithm';
-import Fighter from '../../algorithms/CharacterClass';
+import { handicaps, weapons, fields } from '../../algorithmRefacto/bonusmalus/BonusMalus';
+import CombatAlgorithm from '../../algorithmRefacto/CombatAlgorithm';
+import Fighter from '../../algorithmRefacto/CharacterClass';
 
 import FighterContext from '../../contexts/FighterContext';
 import FigthtingReport from '../../components/Figthing Report/FightingReport';
