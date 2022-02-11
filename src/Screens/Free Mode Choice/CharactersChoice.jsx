@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import CharacterDetail from '../../components/Character detail/CharacterDetail';
 import CharactersList from '../../components/Characters list/CharactersList';
 
+import FighterContext from '../../contexts/FighterContext';
+
 import styles from './CharactersChoice.module.css';
 
 export default function CharactersChoice({ handleChange }) {
+  const { resetGame } = useContext(FighterContext);
   const [selectedCharacter, setSelectedCharacter] = useState('');
   const [heroesList, setHeroesList] = useState('');
   const [query, setQuery] = useState('');
@@ -23,6 +26,8 @@ export default function CharactersChoice({ handleChange }) {
   };
 
   useEffect(() => {
+    resetGame();
+
     const characterIndex = Math.round(Math.random() * 731);
     fetch(`https://cors-bypass.tkzprod.dev/superheroapi.com/api/408055134055673/${characterIndex}`)
       .then((res) => res.json())
