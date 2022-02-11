@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { handicaps, weapons, fields } from '../../algorithms/bonusmalus/BonusMalus';
+import { handicaps, weapons, fields } from '../../algorithmRefacto/bonusmalus/BonusMalus';
 
 import FighterContext from '../../contexts/FighterContext';
 import styles from './OptionsForm.module.css';
